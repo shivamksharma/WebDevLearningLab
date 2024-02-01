@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>WebDevProjectLabs</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Dicover and Contribute</h1>
+      <p>
+        Our Open-Source Web Project Showcase welcomes developers worldwide to
+        share their work, practice, gain feedback, and collaborate. With diverse
+        projects spanning various technologies and domains, there's something
+        for everyone. Join us in celebrating open-source collaboration in web
+        development!
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Project Name</th>
+            <th>Demo</th>
+            <th>GitHub Directory</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Text Lightning Animation</td>
+            <td>
+              <a
+                href="https://shivamksharma.github.io/WebDevLearningLab/project_1/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Demo
+              </a>
+            </td>
+            <td>
+              <a
+                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Login Page</td>
+            <td>
+              <a
+                href="https://shivamksharma.github.io/WebDevLearningLab/project_2/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Demo
+              </a>
+            </td>
+            <td>
+              <a
+                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_2"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="toggle-theme" onclick="toggleTheme()">Toggle Theme</button>
+    </div>
+
+    <script>
+      function toggleTheme() {
+        var body = document.body;
+        if (body.style.backgroundColor === "rgb(18, 18, 18)") {
+          body.style.backgroundColor = "#f5f5f5";
+          body.style.color = "#121212";
+        } else {
+          body.style.backgroundColor = "#121212";
+          body.style.color = "#f5f5f5";
+        }
+      }
+    </script>
+  </body>
+</html>
