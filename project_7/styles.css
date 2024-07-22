@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,700);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  background-color: #ccccd2;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  margin: 8px auto;
+}
+
+.main-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 15px 40px;
+  flex-wrap: wrap;
+}
+
+#nothing-alert {
+  display: none;
+  width: 100%;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 80px;
+  height: 80px;
+  margin: 0.5em;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0.2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  animation: populate 0.5s ease-out normal backwards;
+}
+
+.card hover {
+  transform: scale(1.1);
+  z-index: 1;
+  box-shadow: 0.5px 12px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes populate {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.icon-name {
+  font-size: 0.7em;
+  text-align: center;
+  margin: 0;
+}
+
+.search-container {
+  position: relative;
+  height: 45px;
+  max-width: 650px;
+  width: 70%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-container i {
+  position: absolute;
+  left: 0;
+  font-size: 16px;
+  color: #707070;
+}
+
+#search-input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  padding-left: 50px;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 786px) {
+  .search-container {
+    width: 50%;
+  }
+}
+
