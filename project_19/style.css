@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url("https://cdn.discordapp.com/attachments/1038636614353547556/1038643568114670080/IMG_20221028_181539_1.jpg");
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #000;
+  border-radius: 16px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(8.9px);
+  border: 1px solid grey;
+  width: 15em;
+  height: 15em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.form p {
+  color: #fff;
+  font-weight: bolder;
+  margin-bottom: 30px;
+}
+
+.inp {
+  margin-left: auto;
+  margin-right: auto;
+  white-space: 4px;
+}
+
+.input {
+  color: #fff;
+  margin: 1px;
+  height: 2em;
+  width: 2em;
+  float: left;
+  text-align: center;
+  background: #000;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 10px;
+  transistion: all 0.2s ease;
+}
+
+.form button {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #000;
+  color: #fff;
+  width: 8.5em;
+  height: 2.3em;
+  border: #369eff 0.2em solid;
+  border-radius: 11px;
+  transistion: all 0.2s ease;
+  margin-top: 20px;
+}
+
+.form button:hover {
+  background-color: #369eff;
+}
