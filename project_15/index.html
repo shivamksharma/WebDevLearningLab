@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ToDo List v3</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    />
+    <link rel="icon" href="images/flag-hackclub.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+        <input
+          type="text"
+          id="list-title"
+          name="listname"
+          placeholder="Things to do"
+        />
+        <i class="clear fas fa-times"></i>
+      </div>
+    </header>
+    <div id="content">
+      <ul id="list"></ul>
+      <div id="add">
+        <i class="fas fa-plus-circle"></i>
+        <input type="text" id="input" placeholder="Add a to-do" />
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
