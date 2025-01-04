@@ -1,0 +1,70 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+body {
+	height: 100%;
+	width: 100%;
+	background: #1E1C27;
+}
+*,
+*:after,
+*:before {
+	margin: 0;
+}
+.container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+}
+.button {
+	filter: drop-shadow(0px 0px 0px #975300);
+	position: relative;
+	margin: auto;
+	cursor: pointer;
+	transition: 0.5s filter linear;
+}
+.circle {
+	color: #fff;
+	stroke-dasharray: 52;
+	animation: rotate 3s infinite linear;
+	transition: color 0.3s linear, stroke-dasharray 1s linear;
+}
+.play {
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0) rotate(90deg) scale(0.6);
+	transition: color 0.3s linear,
+		transform 0.75s cubic-bezier(0.04, 0.19, 0, 0.99);
+	padding-bottom: 0.5rem;
+}
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+.button:hover {
+	filter: drop-shadow(2px 4px 15px #975300);
+}
+.button:hover .circle {
+	color: #e38b29;
+	stroke-dasharray: 360;
+}
+.button:hover .play {
+	color: #e38b29;
+	transform: translate3d(-50%, -50%, 0) rotate(90deg) scale(0.9);
+}
+
+.player {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	user-select: none;
+}

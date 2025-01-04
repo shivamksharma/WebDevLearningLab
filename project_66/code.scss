@@ -1,0 +1,125 @@
+@property --progress {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 0%;
+}
+
+@property --opacity {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+@keyframes animate-progress {
+  from {
+		--progress: 0%;
+  }
+  to {
+		--progress: 100%;
+  }
+}
+
+:root {
+	--color-bgc: #fff;
+	--color-txt: #000;
+	--mix-blend: screen;
+	@media (prefers-color-scheme: dark) {
+		--color-bgc: #000;
+		--color-txt: #fff;
+		--mix-blend: multiply;
+	}
+}
+
+html {
+  background-color: var(--color-bgc);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+html *, html *::before, html *::after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+	font-family: 'Poppins', sans-serif;
+}
+
+button {
+	--unit: min(18px, 3vw);
+	background-color: var(--color-txt);
+	display: inline-flex;
+	align-items: stretch;
+	justify-content: stretch;
+	appearance: none;
+	padding: calc(.2 * var(--unit));
+	border-width: 0px;
+	font-size: calc(4 * var(--unit));
+	font-family: inherit;
+	letter-spacing: calc(-0.0625 * var(--unit));
+	border-radius: calc(2 * var(--unit));
+	--opacity: 0;
+	--opacity-percent: calc(var(--opacity) * 100%);
+	--progress-multiplier: 3;
+	--progress-multiplied: calc(var(--progress) * var(--progress-multiplier));
+	--min-percent: calc(0% - var(--progress-multiplied));
+	--max-percent: calc(calc(100% * var(--progress-multiplier)) - var(--progress-multiplied));
+	background-image: repeating-linear-gradient(
+		to right,
+		hsl(0   100% 50% / var(--opacity-percent)) var(--min-percent),
+		hsl(60  100% 50% / var(--opacity-percent)),
+		hsl(120 100% 50% / var(--opacity-percent)),
+		hsl(180 100% 50% / var(--opacity-percent)),
+		hsl(240 100% 50% / var(--opacity-percent)),
+		hsl(300 100% 50% / var(--opacity-percent)),
+		hsl(360 100% 50% / var(--opacity-percent)),
+		hsl(0   100% 50% / var(--opacity-percent)) var(--max-percent)
+	);
+	background-repeat: repeat-x;
+	transform: scale(1);
+	cursor: pointer;
+	animation: animate-progress 1s linear infinite;
+	transition:
+		all 0.25s ease-out,
+		--opacity 0.25s ease-out;
+	&:hover {
+		scale: 1.1;
+		--opacity: 1;
+		&:active {
+			scale: 1;
+			transition:
+				all 0.25s ease-out,
+				scale 0.15s ease-out,
+				--opacity 0.25s ease-out;
+		}
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		--offset: calc(4 * var(--unit));
+		width: calc(100% - var(--offset));
+		height: calc(100% - var(--offset));
+		translate: -50% -50%;
+		background: inherit;
+		--blur-amount: calc(5 * var(--unit) * var(--opacity));
+		filter: blur(var(--blur-amount));
+		border-radius: inherit;
+	}
+}
+
+.button-inner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--color-bgc);
+	padding: calc(2 * var(--unit));
+	border-radius: calc(1.8 * var(--unit));
+	color: var(--color-txt);
+	mix-blend-mode: var(--mix-blend);
+	pointer-events: none;
+}

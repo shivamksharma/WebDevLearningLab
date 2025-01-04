@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Hubballi&display=swap");
+
+@mixin flex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body,
+html {
+  height: 100%;
+  display: grid;
+  --db: #0a1347;
+  --bg: #f5e8df;
+  --r: #e1504a;
+  background: var(--bg);
+  --expo: cubic-bezier(1, 0, 0, 1);
+  --elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-family: "Hubballi";
+  font-weight: 900;
+}
+
+#container {
+  margin: auto;
+  text-align: center;
+  transform: translateY(-5vw);
+}
+
+p {
+  text-align: center;
+  font-size: 6vw;
+  text-transform: uppercase;
+  color: var(--db);
+  margin: 0 0 5vw;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  pointer-events: none;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 90vw;
+    height: 22.5vw;
+    top: 3.5vw;
+    box-shadow: 0 0 0 0.5vw var(--db), 0 2.5vw 0 -0.5vw var(--db);
+    left: calc(50% - 45vw);
+    z-index: -2;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    width: 125%;
+    height: 125%;
+    background: var(--bg);
+    left: -12.5%;
+    top: -12.5%;
+    z-index: -1;
+  }
+}
+
+body {
+  &.btn0 {
+    .buttons,
+    .buttons:hover {
+      .btnwrap {
+        &:first-of-type {
+          width: 8.5vw;
+          transform: translateX(calc(40vw - 4.25vw));
+          z-index: 9;
+          &:before {
+            transform: translate(-50%, -50%) translateZ(0px) scale(1);
+          }
+          > div {
+            &:before {
+              transform: translateY(100%);
+            }
+            &:after {
+              transform: translateX(1.5vw);
+              transition-delay: 0s;
+            }
+            span > span.word > span.char {
+              transform: translateY(-200%);
+            }
+          }
+        }
+        &:nth-of-type(2) {
+          transition: 0.4s var(--expo);
+          transform: translateX(200vw);
+          width: 0;
+        }
+      }
+    }
+  }
+  &.btn1 {
+    .buttons,
+    .buttons:hover {
+      .btnwrap {
+        z-index: 9;
+        &:last-of-type {
+          width: 8.5vw;
+          transform: translateX(calc(-40vw + 4.25vw));
+          &:before {
+            transform: translate(-50%, -50%) translateZ(0px) scale(1);
+            background: var(--r);
+          }
+          > div {
+            &:before {
+              transform: translateY(100%);
+            }
+            &:after {
+              transform: translateX(1.5vw);
+              color: var(--r);
+              transition-delay: 0s;
+            }
+            span > span.word > span.char {
+              transform: translateY(-200%);
+            }
+          }
+        }
+        &:first-of-type {
+          transition: 0.4s var(--expo);
+          transform: translateX(-200vw);
+          width: 0;
+        }
+      }
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  &:hover {
+    .btnwrap {
+      width: 30%;
+      > div {
+        font-size: 3.5vw;
+      }
+      &:hover {
+        width: 60%;
+        > div {
+          font-size: 5vw;
+          span.char {
+            &:before {
+              transform: scaleY(0);
+              transition: transform 0.3s var(--expo) 0s;
+              transform-origin: top;
+            }
+          }
+        }
+        ~ .btnwrap {
+          width: 30%;
+          > div {
+            font-size: 3.5vw;
+          }
+        }
+      }
+    }
+  }
+  .btnwrap {
+    width: 47.5%;
+    position: relative;
+    height: 8.5vw;
+    @include flex();
+    transition: 0.4s ease-in-out;
+    transform: translateZ(0px);
+    &:before {
+      content: "";
+      position: absolute;
+      width: 200vw;
+      height: 200vw;
+      border-radius: 100%;
+      background: var(--db);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) translateZ(0px) scale(0);
+      transition: transform 1s var(--expo);
+    }
+    &:last-of-type {
+      > div {
+        background: repeating-linear-gradient(
+          45deg,
+          var(--r) 0.25vw,
+          var(--bg) 0.25vw,
+          var(--bg) 1.5vw,
+          var(--r) 1.5vw,
+          var(--r) 1.75vw
+        );
+        span.char {
+          position: relative;
+          &:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            top: 25%;
+            background: var(--bg);
+            z-index: -1;
+            transition: transform 0.3s var(--elastic) 0.4s;
+            transform-origin: bottom;
+          }
+        }
+      }
+    }
+    button,
+    > div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      z-index: 9;
+      cursor: pointer;
+    }
+    > div {
+      &:after {
+        content: "✗";
+        position: absolute;
+        width: 4vw;
+        height: 4vw;
+        color: var(--db);
+        @include flex();
+        background: var(--bg);
+        font-size: 2.5vw;
+        left: 1vw;
+        border-radius: 100%;
+        z-index: 9;
+        transform: translateX(-200%) rotate(360deg);
+        transition: 0.3s var(--elastic);
+      }
+    }
+    &:first-of-type {
+      --r: var(--bg);
+      > div {
+        &:after {
+          content: "✓";
+        }
+      }
+      > div > span {
+        filter: url(#left);
+      }
+    }
+    > div > span {
+      filter: url(#right);
+    }
+    button:hover {
+      &#buttonone {
+        ~ div {
+          &:before {
+            background: var(--db);
+          }
+        }
+      }
+      ~ div {
+        &:before {
+          transform-origin: top;
+          transform: scaleY(1) translate(-50%, 0) translateZ(0px);
+          transition: transform 0.4s ease-in-out,
+            background 0.4s ease-in-out 0.4s;
+          border-radius: 0;
+          background: var(--r);
+        }
+        &:after {
+          transform: translateX(0);
+          transition-delay: 0.4s;
+        }
+        > span {
+          span.char {
+            transform: translateY(-100%) translateZ(0px);
+            transition: transform 0.5s var(--expo)
+                calc((var(--char-index) + 4) * 0.05s),
+              color 0.4s ease-in-out;
+            color: var(--r);
+          }
+        }
+      }
+    }
+    > div {
+      z-index: 8;
+      opacity: 1;
+      @include flex();
+      letter-spacing: 0.5vw;
+      text-transform: uppercase;
+      font-size: 4vw;
+      line-height: 1;
+      text-align: center;
+      color: var(--db);
+      box-shadow: 0 0 0 0.5vw var(--db), 0 0 0 1vw var(--bg);
+      background: var(--bg);
+      border-radius: 50vmin;
+      overflow: hidden;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 50vw;
+        height: 50vw;
+        top: 0;
+        left: 50%;
+        background: var(--db);
+        transform: scaleY(0) translate(-50%, 0) translateZ(0px);
+        transform-origin: bottom;
+        transition: transform 0.4s ease-in-out 0.2s,
+          border-radius 0.8s ease-in-out, background 0.8s ease-in-out;
+        border-radius: 100vw;
+      }
+      > span {
+        @include flex();
+        height: 100%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        line-height: 1;
+        transition: 0.5s ease-in-out;
+        span.word {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          justify-content: center;
+        }
+        span.char {
+          @include flex();
+          position: relative;
+          transition: transform 0.5s var(--expo)
+            calc((var(--char-total) - var(--char-index)) * 0.035s);
+          top: 0%;
+          transform: translateY(0%) translateZ(0px);
+          &:after {
+            content: attr(data-char);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            color: var(--bg);
+            height: 100%;
+            width: 100%;
+            @include flex();
+          }
+        }
+      }
+    }
+  }
+}
+
+svg {
+  position: absolute;
+}

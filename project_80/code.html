@@ -1,0 +1,26 @@
+<div id="container">
+  <p>Continue?</p>
+  <div class="buttons">
+    <div class="btnwrap">
+      <button type="button" id="buttonone">Confirm</button>
+      <div><span data-splitting="chars">Confirm</span></div>
+    </div>
+    <div class="btnwrap">
+      <button type="button">Cancel</button>
+      <div><span data-splitting="chars">Cancel</span></div>
+    </div>
+  </div>
+</div>
+
+<svg id='blob' version='1.1' xmlns='http://www.w3.org/2000/svg'>
+  <defs>
+    <filter id='left'>
+      <feturbulence basefrequency='0.000 0.0' numoctaves='1' result='noise' type='fractalNoise' seed='13'></feturbulence>
+      <fedisplacementmap in2='noise' in='SourceGraphic' scale='46'></fedisplacementmap>
+    </filter>
+    <filter id='right'>
+      <feturbulence basefrequency='0.000 0.0' numoctaves='1' result='noise' type='fractalNoise' seed='10'></feturbulence>
+      <fedisplacementmap in2='noise' in='SourceGraphic' scale='46'></fedisplacementmap>
+    </filter>
+  </defs>
+</svg>

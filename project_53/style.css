@@ -1,0 +1,106 @@
+@import "https://rsms.me/inter/inter.css";
+
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+body { background: #111; color: #eee; padding: 130px 0 20px; text-align: center }
+main { display: flex; justify-content: center; gap: 20px; margin: 40px 0; flex-wrap: wrap }
+div { min-width: 600px; height: 100px; position: relative; border-radius: 50px; cursor: pointer }
+
+div:hover::after {
+  opacity: 0.5;
+}
+
+div::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #111;
+  inset: 5px;
+  border-radius: 45px;
+  z-index: 1;
+  transition: opacity .3s ease;
+}
+
+#toggle:checked ~ main div::after {
+  opacity: 0.5;
+}
+
+@property --r {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+#a {
+  background: conic-gradient(from var(--r), #222 0%, #eee 10%, #222 20%);
+  animation: rotating 3s linear infinite;
+}
+@keyframes rotating {
+  0% {
+    --r: 0deg;
+  }
+  100% {
+    --r: 360deg;
+  }
+}
+
+/* better version */
+
+@property --r2 {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --x {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+
+#b {
+  background: conic-gradient(from calc(var(--r2) - 80deg) at var(--x) 50px, #222 0%, #fff 20%, #222 25%);
+  animation: -0.64s rotating2 3s linear infinite, -0.64s x 3s linear infinite;
+}
+@keyframes x {
+  /* w:h === 6:1 */
+  /* with a 80px x-margin */
+  0% {
+    --x: 80px;
+  }
+  /* 6/(6+3.14) * 50% */
+  32.82275711% {
+    --x: 520px;
+  }
+  50% {
+    --x: 520px;
+  }
+  /* 50% + 32.8% */
+  82.82275711% {
+    --x: 80px;
+  }
+  100% {
+    --x: 80px;
+  }
+}
+
+@keyframes rotating2 {
+  0% {
+    --r2: 0deg;
+  }
+  32.82275711% {
+    --r2: 0deg;
+  }
+  50% {
+    --r2: 180deg;
+  }
+  82.82275711% {
+    --r2: 180deg;
+  }
+  100% {
+    --r2: 360deg;
+  }
+}

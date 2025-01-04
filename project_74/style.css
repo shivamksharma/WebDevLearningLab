@@ -1,0 +1,41 @@
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+
+.toggle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.toggle input {
+  display: none;
+}
+.toggle input#toggle-1:checked ~ .label-1 {
+  width: 6rem;
+}
+.toggle input#toggle-2:checked ~ .label-2 {
+  width: 6rem;
+}
+.toggle input#toggle-3:checked ~ .label-3 {
+  width: 6rem;
+}
+.toggle input#toggle-4:checked ~ .label-4 {
+  width: 6rem;
+}
+.toggle input#toggle-5:checked ~ .label-5 {
+  width: 6rem;
+}
+.toggle label {
+  width: 4rem;
+  height: 3rem;
+  border-radius: 999px;
+  background: #FF4081;
+  cursor: pointer;
+  transition: 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}

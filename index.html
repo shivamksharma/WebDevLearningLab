@@ -1,18 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>WebDevProjectLabs</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebDevProjectLabs</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
       rel="stylesheet"
     />
+    <link href="style.css" rel="stylesheet" />
   </head>
   <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <h1>WebDevProjectLabs</h1>
+      <div class="navbar-right">
+        <div class="search-container">
+          <button id="search-toggle">
+            <i class="fas fa-search"></i>
+          </button>
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Search projects..."
+            class="hidden"
+          />
+        </div>
+        <button id="theme-toggle">
+          <i class="fas fa-moon"></i> <!-- Default to light mode -->
+        </button>
+      </div>
+    </nav>
+
+    <!-- Container -->
     <div class="container">
-      <h1>Dicover and Contribute</h1>
+      <h1>Discover and Contribute</h1>
       <p>
         Our Open-Source Web Project Showcase welcomes developers worldwide to
         share their work, practice, gain feedback, and collaborate. With diverse
@@ -20,657 +42,119 @@
         for everyone. Join us in celebrating open-source collaboration in web
         development!
       </p>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Project Name</th>
-            <th>Demo</th>
-            <th>GitHub Directory</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Text Lightning Animation</td>
-            <td>
+
+      <!-- Projects Container -->
+      <div class="projects-container">
+        <!-- Project Card 1 -->
+        <div class="project-card" data-title="Text Lightning Animation">
+          <div class="card-thumbnail">
+            <img src="https://picsum.photos/300/200?random=1" alt="Project Thumbnail" />
+          </div>
+          <div class="card-content">
+            <h2>Text Lightning Animation</h2>
+            <div class="card-buttons">
               <a
                 href="https://shivamksharma.github.io/WebDevLearningLab/project_1/"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="view-button"
               >
-                Demo
+                <i class="fas fa-eye"></i> Preview
               </a>
-            </td>
-            <td>
               <a
                 href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_1"
                 target="_blank"
                 rel="noopener noreferrer"
+                class="github-button"
               >
-                GitHub
+                <i class="fab fa-github"></i> GitHub
               </a>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Login Page</td>
-            <td>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card" data-title="Login Page">
+          <div class="card-thumbnail">
+            <img src="https://picsum.photos/300/200?random=2" alt="Project Thumbnail" />
+          </div>
+          <div class="card-content">
+            <h2>Login Page</h2>
+            <div class="card-buttons">
               <a
                 href="https://shivamksharma.github.io/WebDevLearningLab/project_2/"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Demo
+                class="view-button"
+              >
+                <i class="fas fa-eye"></i> Preview
               </a>
-            </td>
-            <td>
               <a
                 href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_2"
                 target="_blank"
                 rel="noopener noreferrer"
-                >GitHub</a
+                class="github-button"
               >
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Modern Login Page</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_3/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_3"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Social Media Popup Icons</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_4/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_4"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>YouTube Subcription Form</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_5/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_5"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Text Animation (Circular)</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_6/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_6"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>Searching Cards</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_7/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_7"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>Searching Lists</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_8/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_8"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>Age Calculator</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_9/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_9"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>ToDo List v1</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_10/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_10"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>11</td>
-            <td>ToDo List v2</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_11/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_11"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>Timer v1</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_12/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_12"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>13</td>
-            <td>Timer v2</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_13/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_13"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>14</td>
-            <td>Animated Login Form</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_14/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_14"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>15</td>
-            <td>ToDo List v3</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_15/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_15"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>Weather App v1</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_16/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_16"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>17</td>
-            <td>Weather App v2</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_17/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_17"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>18</td>
-            <td>OTP Form v1</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_18/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_18"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>19</td>
-            <td>OTP Form v2</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_19/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_19"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>20</td>
-            <td>Password Generator</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_20/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_20"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>21</td>
-            <td>Password Validator</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_21/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_21"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>22</td>
-            <td>Pomodoro Timer</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_22/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_22"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>23</td>
-            <td>Analog Clock v1</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_23/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_23"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>24</td>
-            <td>Analog Clock v2</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_24/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_24"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>25</td>
-            <td>Analog Clock v3</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_25/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_25"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>26</td>
-            <td>Simple Calculator v1</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_26/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_26"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>27</td>
-            <td>Simple Calculator v2</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_27/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_27"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>28</td>
-            <td>Simple Calculator v3</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_28/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_28"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>29</td>
-            <td>Simple Calculator v4</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_29/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_29"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>31</td>
-            <td>VAT Calculator</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_31/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_31"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-          <tr>
-            <td>32</td>
-            <td>GitHub Username Search</td>
-            <td>
-              <a
-                href="https://shivamksharma.github.io/WebDevLearningLab/project_32/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo</a
-              >
-            </td>
-            <td>
-              <a
-                href="https://github.com/shivamksharma/WebDevLearningLab/tree/main/project_32"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub</a
-              >
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <button class="toggle-theme" onclick="toggleTheme()">
-        <i class="bi bi-brightness-high-fill"></i> Light Mode
-      </button>
-    </div>
-    <script>
-      function toggleTheme() {
-        var body = document.body;
-        body.classList.toggle("light-theme");
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
 
-        var themeButton = document.querySelector(".toggle-theme");
-        if (body.classList.contains("light-theme")) {
-          themeButton.innerHTML = '<i class="bi bi-moon-fill"></i> Dark Mode';
-        } else {
-          themeButton.innerHTML =
-            '<i class="bi bi-brightness-high-fill"></i> Light Mode';
-        }
+        <!-- Add more project cards here -->
+      </div>
+    </div>
+
+    <!-- JavaScript for Dark/Light Mode Toggle and Search Bar -->
+    <script>
+      // Dark/Light Mode Toggle
+      const themeToggle = document.getElementById("theme-toggle");
+      const body = document.body;
+
+      // Check for saved theme in localStorage
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        body.classList.add(savedTheme);
+        updateIcon(savedTheme);
       }
+
+      // Toggle theme on button click
+      themeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+        const currentTheme = body.classList.contains("dark-mode") ? "dark-mode" : "";
+        localStorage.setItem("theme", currentTheme);
+        updateIcon(currentTheme);
+      });
+
+      // Update the icon based on the current theme
+      function updateIcon(theme) {
+        const icon = theme === "dark-mode" ? "fa-sun" : "fa-moon";
+        themeToggle.innerHTML = `<i class="fas ${icon}"></i>`;
+      }
+
+      // Search Bar Functionality
+      const searchToggle = document.getElementById("search-toggle");
+      const searchBar = document.getElementById("search-bar");
+      const projectCards = document.querySelectorAll(".project-card");
+
+      // Toggle search bar visibility
+      searchToggle.addEventListener("click", () => {
+        searchBar.classList.toggle("hidden");
+        searchBar.focus();
+      });
+
+      // Filter projects based on search input
+      searchBar.addEventListener("input", (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        projectCards.forEach((card) => {
+          const title = card.getAttribute("data-title").toLowerCase();
+          if (title.includes(searchTerm)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
     </script>
   </body>
 </html>
